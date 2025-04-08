@@ -1,0 +1,330 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(247, 247, 247);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#offline-message {
+    font-family: Noto Sans, sans-serif;
+    font-size: medium;
+}
+
+.main-header {
+    font-family:  Noto Sans, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(213, 180, 14);
+}
+
+#notes-container {
+    margin: 0 auto;
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+}
+
+.note {
+    font-family: Noto Sans, sans-serif;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.note h3 {
+    font-family: Noto Sans, sans-serif;
+    margin-top: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.note p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#view-note-content {
+    font-family: Noto Sans, sans-serif;
+    font-size: 16px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#view-note-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#view-note-content::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 4px;
+}
+
+#view-note-content::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+}
+
+.icon-container {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.add-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(233, 199, 4);
+    border: none;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: rgb(213, 180, 14) !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#add-note-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.add-modal {
+    font-family:  Noto Sans, sans-serif;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(100vw/2);
+    height: calc(100vw/3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow-y: auto;
+    text-align: justify;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.add-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.add-modal::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 4px;
+}
+
+.add-modal::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.close {
+    cursor: pointer;
+    float: right;
+    font-size: 24px;
+}
+
+#view-note-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-button {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(233, 199, 4);
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.footer-button:hover {
+    background-color: rgb(213, 180, 14) !important;
+}
+
+.new-note {
+    text-align: center;
+    width: 100%;
+}
+
+#title {
+    width: 100%;
+    height: calc(100%/14);
+    font-size: 22px;
+    border: none;
+}
+
+#edit-title {
+    width: 100%;
+    height: calc(100%/14);
+    font-size: 22px;
+    border: none;
+}
+
+#content {
+    width: 100%;
+    height: calc(100%/3);
+    font-size: 20px;
+    border: none;
+    overflow-y: auto;
+    resize: none;
+}
+
+#content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#content::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 4px;
+}
+#content::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+#edit-content {
+    width: 100%;
+    height: calc(100%/3);
+    font-size: 20px;
+    border: none;
+    overflow-y: auto;
+    resize: none;
+}
+
+#edit-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#edit-content::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 4px;
+}
+#edit-content::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.view-modal {
+    font-family:  Noto Sans, sans-serif;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(100vw/2);
+    height: calc(100vw/3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    text-align: justify;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.view-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.view-modal::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 4px;
+}
+
+.view-modal::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+#edit-note-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.edit-modal {
+    font-family:  Noto Sans, sans-serif;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(100vw/2);
+    height: calc(100vw/3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow-y: auto;
+    text-align: justify;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}

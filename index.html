@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/notes-icon.png" type="image/png">
+
+    <!-- Основной манифест -->
+    <link rel="manifest" href="/manifest.json">
+        
+    <!-- Универсальный тег для установки на домашний экран -->
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Цвет темы для адресной строки -->
+    <meta name="theme-color" content="#4285f4">
+    
+    <!-- Иконки для iOS (по-прежнему требуют отдельного тега) -->
+    <link rel="apple-touch-icon" href="/assets/notes-icon-152x152.png">
+    
+    <!-- Дополнительно: Splash Screen для iOS -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+    <div class="container">
+        <div id="offline-message" class="hidden">Оффлайн-режим</div>
+
+        <h1 class="main-header">Заметки</h1>
+
+        <div id="notes-container"></div>
+        
+        <div class="fixed-button">
+            <button id="add-note-button" class="add-button">+</button>
+        </div>
+
+        <div id="add-note-window" class="hidden">
+            <div class="add-modal">
+                <h2 class="new-note">Новая заметка</h2>
+                <input type="text" id="title" placeholder="Заголовок">
+                <textarea id="content" placeholder="Начните ввод"></textarea>
+                <div class="modal-footer">
+                    <button id="save-note-button" class="footer-button">Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="edit-note-window" class="hidden">
+            <div class="edit-modal">
+                <h2 class="new-note">Редактирование</h2>
+                <input type="text" id="edit-title" placeholder="Заголовок">
+                <textarea id="edit-content" placeholder="Начните ввод"></textarea>
+                <div class="modal-footer">
+                    <button id="edit-note-button" class="footer-button">Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-note-window" class="hidden">
+            <div class="view-modal">
+                <h2 id="view-note-title"></h2>
+                <pre id="view-note-content"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
